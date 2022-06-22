@@ -87,7 +87,7 @@ namespace Labb3_systemtestning
         {
             try
             {
-                Console.WriteLine("Enter the first number:");
+                Console.WriteLine("Enter the second number:");
                 num2 = int.Parse(Console.ReadLine());
             }
             catch (Exception)
@@ -103,7 +103,7 @@ namespace Labb3_systemtestning
 
         public int addition(int num1, int num2)
         {
-            //firstUserInput()
+            //firstUserInput();
             //secondUserInput();
             result = num1 + num2;
             string calc = "Calculation: " + num1.ToString() + " + " + num2.ToString() + " = " + result.ToString();
@@ -114,7 +114,7 @@ namespace Labb3_systemtestning
 
         public int subtraction(int num1, int num2)
         {
-            //firstUserInput()
+            //firstUserInput();
             //secondUserInput();
             result = num1 - num2;
             string calc = "Calculation: " + num1.ToString() + " - " + num2.ToString() + " = " + result.ToString();
@@ -125,12 +125,20 @@ namespace Labb3_systemtestning
 
         public int division(int num1, int num2)
         {
-            //firstUserInput()
+            //firstUserInput();
             //secondUserInput();
-            result = num1 / num2;
+            try
+            {
+                result = num1 / num2;
+            }
+            catch (DivideByZeroException emsg)
+            {
+                Console.WriteLine(emsg.Message);
+                throw;
+            }
             string calc = "Calculation: " + num1.ToString() + " / " + num2.ToString() + " = " + result.ToString();
             calculations.Add(calc);
-            //userMenu();
+            userMenu();
             return result;
         }
         public int multiplication(int num1, int num2)
