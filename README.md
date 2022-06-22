@@ -2,6 +2,8 @@
 
 Acceptanstester:
 
+Alla tester förutsätter att programmet är startat
+
 Test1:
 1. Välj alternativ 1 "Addition" och tryck på enter
 2. Texten "Enter the first number" visas, skriv "2" och tryck på enter
